@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'v8.6.11',
-        'version' => '8.6.11.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '9495b660495c4e3443bb13c6e82f6e190f7e3793',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -395,12 +395,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'v8.6.11',
-            'version' => '8.6.11.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '9495b660495c4e3443bb13c6e82f6e190f7e3793',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -766,8 +766,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -970,6 +970,15 @@
             'aliases' => array(),
             'reference' => 'c6c1022351a901512170118436c764e473f6de8c',
             'dev_requirement' => true,
+        ),
+        'spatie/yaml-front-matter' => array(
+            'pretty_version' => '2.0.6',
+            'version' => '2.0.6.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/yaml-front-matter',
+            'aliases' => array(),
+            'reference' => '96379e38b527b02380d8f83056a52a8f6489b4cf',
+            'dev_requirement' => false,
         ),
         'swiftmailer/swiftmailer' => array(
             'pretty_version' => 'v6.3.0',
@@ -1233,6 +1242,15 @@
             'install_path' => __DIR__ . '/../symfony/var-dumper',
             'aliases' => array(),
             'reference' => '294e9da6e2e0dd404e983daa5aa74253d92c05d0',
+            'dev_requirement' => false,
+        ),
+        'symfony/yaml' => array(
+            'pretty_version' => 'v5.4.3',
+            'version' => '5.4.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/yaml',
+            'aliases' => array(),
+            'reference' => 'e80f87d2c9495966768310fc531b487ce64237a2',
             'dev_requirement' => false,
         ),
         'theseer/tokenizer' => array(
