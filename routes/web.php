@@ -22,13 +22,12 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('posts/{post}', function ($slug) {
-    // We find a post by its slug which matches the name of the post html file stored in the filesystem.
-    // FOR THIS METHOD TO WORK, THE POSTS HAVE TO BE STORED BY THE NAME OF THE POST'S TITLE SLUGGED
+Route::get('posts/{post}', function ($id) {
+    // We find a post in the database matching the id provided by the user.
     // We filter the user input coming from the post route in the {post} parameter using regex
     // in order to sanitize it by only allowing alphanumeric characters and the characters _ and - as well.
 
     return view('post', [
-        'post' => Post::findOrFail($slug)
+        'post' => Post::findOrFail($id)
     ]);
 })->where('post', '[a-zA-Z0-9_\-]+');
