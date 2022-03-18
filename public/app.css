@@ -1,0 +1,18 @@
+body {
+   font-family: 'Nunito', sans-serif;
+   background: #ffffff;
+   color:rgb(0, 0, 0);
+   max-width: 600px;
+   margin: auto;
+}
+
+p{
+   line-height: 1.6;
+}
+
+article + article{
+   margin-top: 3rem;
+   padding-top: 3 rem;
+   border-top: 1px solid #c5c5c5;
+
+}

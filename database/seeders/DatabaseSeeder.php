@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Post;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +14,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // We seed our database with 13 new posts creating at the same time
+        // 13 categories and 13 users as well because every post is related to a
+        //  user and a category that have to pre-exist beforehand (see the Post model)
+        Post::factory(13)->create();
     }
 }
