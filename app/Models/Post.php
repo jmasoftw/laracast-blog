@@ -13,6 +13,20 @@ class Post extends Model
 
     /*    protected $with = ['category', 'author'];   // An alternative way to set eager loading for this properties in every post*/
 
+    //  We use query scopes here, defining a filter to be used in the routes file in order to allow for the search functionality.
+    //  We allow passing different filters for different purposes through the filters array using a unique name.This name ('search') is
+    //  passed to the route in the input tag for the search field in the _posts-header.blade.php, the route point it here where we check for it.
+    //  When we have such search term (not mandatory hereby the false condition), we use it to filter the results according to the where clauses.
+    public function scopeFilter($query, array $filters)
+    {
+        //        If we have a 'search' key, use its value ($search) to perform the sub query
+        $query->when($filters['search'] ?? false, function ($query, $search) {
+            $query
+                ->where('title', 'like', '%' . $search . '%')
+                ->orWhere('body', 'like', '%' . $search . '%');
+        });
+    }
+
     public function category()
     {
         //        Switch to this one if a post in this app can only have one distinctive category
