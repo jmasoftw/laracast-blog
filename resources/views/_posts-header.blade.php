@@ -34,6 +34,7 @@
                             </g>
                         </svg>
                     </button>
+
                 </x-slot>
 
                 {{-- All this content matches the default slot in the dropdown component --}}
@@ -42,7 +43,7 @@
                 @foreach($categories as $category)
                     {{-- We apply conditional styles: if the category in the route matches the selected in the drop-down, then the category
                     in the current loop is the selected one and we paint it blue with white text to mark it as the selected one otherwise leave it as is. --}}
-                    <a href='/categories/{{ $category->slug }}' class="block text-left px-3 text-sm leading-6 hover:bg-blue-500 focus:bg-blue-500
+                    <a href='/?category={{ $category->slug }}' class="block text-left px-3 text-sm leading-6 hover:bg-blue-500 focus:bg-blue-500
             hover:text-white focus:text-white {{ isset($currentCategory) && $currentCategory->id === $category->id ? 'bg-blue-500 text-white' : '' }}">
                         {{ ucwords($category->name) }}
                     </a>

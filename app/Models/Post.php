@@ -25,6 +25,19 @@ class Post extends Model
                 ->where('title', 'like', '%' . $search . '%')
                 ->orWhere('body', 'like', '%' . $search . '%');
         });
+
+        //  If we have a 'category' key, use its value ($category) to perform the sub query
+        //  searching for the posts which have a category whose slug matches the $category provided by the user.
+        // The fn() part is where we define our query constraint.
+        $query->when($filters['category'] ?? false, function (
+            $query,
+            $category
+        ) {
+            $query->whereHas(
+                'category',
+                fn($query) => $query->where('slug', $category)
+            );
+        });
     }
 
     public function category()
